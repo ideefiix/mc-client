@@ -1,0 +1,35 @@
+.playerInfoBox__container {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 150px;
+    padding: 8px;
+}
+
+.playerInfoBox__h3 {
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+
+.playerInfoBox__divider {
+    background-color: var(--black-grey);
+    height: 1px;
+    width: 50%;
+    margin-bottom: 8px;
+}
+
+.playerInfoBox__hp_row {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+.playerInfoBox__hpIcon{
+    position: absolute;
+    left: 32px;
+}
+.playerInfoBox__hp {
+    margin-top: 0;
+    margin-bottom: 0;
+}

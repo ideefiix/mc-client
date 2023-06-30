@@ -1,0 +1,56 @@
+.navigationbar__container {
+    display: inline-flex;
+    align-items: center;
+    height: 48px;
+}
+
+.navigationbar_verticalLine {
+    height: 75%;
+    width: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: var(--black-grey);
+}
+
+.navigationbar__icon_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navigationbar__icon_container:hover{
+    cursor: pointer;
+    background-color: var(--primary-color-lighter);
+}
+
+.navigationbar__icon_container:active{
+    background-color: var(--primary-color);
+}
+
+.navigationbar__icon {
+    color: var(--text-color);
+}
+
+.navigationbar__dropDownToggle {
+    background-color: #ffffff;
+    border: none;
+}
+
+.navigationbar__dropDownToggle:hover {
+    background-color: var(--primary-color-lighter);
+}
+
+.navigationbar__dropDownToggle:active {
+    background-color: var(--primary-color);
+}
+
+.navigationbar__dropDownToggle.show {
+    background-color: var(--primary-color);
+}
+
+.navigationbar__dropDownToggle::after {
+    content: none;
+}

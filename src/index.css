@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+#body{
+  background-color: aquamarine ;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+:root {
+  --text-color: #281D16;
+  --black-80: #080604;
+  --black-40: #201712;
+  --black-grey: #bfbbb9;
+  --primary-color: #F57430;
+  --primary-color-light: #f89e6e;
+  --primary-color-lighter: #faba98;
+  --secondary-color: #006AF5;
+  
+  color: var(--text-color);
+  
+}
+
+.whiteBox{
+  border-radius: 5px;
+  background-color: #ffffff;
+}
