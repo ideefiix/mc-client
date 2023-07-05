@@ -37,3 +37,7 @@ input {
 .loginPage__registerText:hover {
     cursor: pointer;
 }
+
+.errorText{
+    color: var(--warning-color);
+}

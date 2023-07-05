@@ -35,21 +35,7 @@ export function AuthProvider({children}) {
     }*/
 
     async function setIdHandler(id) {
-        //Only call this function from within a try-catch
         setUserId(id)
-        navigate("/action")
-        /*const id = getGrandidsession()
-        if (id === "") throw Error("Inloggning måste ske med BankId")
-
-        const res = await verifyFederatedLogin(id)
-        if (res) {
-            const data = res.data
-            localStorage.setItem('AUTH_TOKEN', data.accessToken)
-            localStorage.setItem('REFRESH_TOKEN', data.refreshToken)
-            localStorage.setItem('SESSION_ID', data.grandIdSession)
-            localStorage.setItem('USER_ID', data.userId)
-        } else { throw Error("Du verkar inte ha något Opna-konto. Kontakta din administratör eller registrera ditt eget företag.") }*/
-
     }
 
     return (

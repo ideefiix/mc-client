@@ -1,16 +1,17 @@
 ﻿import axiosClient from "../../apiClient.ts";
 
-interface loginResponse {
-    token: string,
-    userId: string
-}
+
 export function login(userName, password){
-    return axiosClient.post<loginResponse>(
+    return axiosClient.post(
         '/login',
         {
-            userName: userName,
+            name: userName,
             password: password
         }
     )
+}
+
+export function fetchPlayerFromAPI(playerId){
+    return axiosClient.get<Player>(`/player/${playerId}`)
 }
 

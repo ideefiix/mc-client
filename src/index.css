@@ -16,6 +16,7 @@
   --primary-color-light: #f89e6e;
   --primary-color-lighter: #faba98;
   --secondary-color: #006AF5;
+  --warning-color: #F2370C;
   
   color: var(--text-color);
   
