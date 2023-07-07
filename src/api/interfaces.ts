@@ -25,3 +25,26 @@ interface Equipment {
     Protection: number;
     Damage: number;
 }
+interface PlayerItem {
+    playerItemId: string,
+    item: Item,
+    quantity: number
+}
+
+interface Item {
+    itemIndex: number,
+    name: string,
+    description: string,
+    type: ItemType,
+    image: Image
+}
+
+interface ItemType {
+    typeId: number,
+    typeName: string
+}
+
+interface Image {
+    imageId: string,
+    image: string
+}

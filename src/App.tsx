@@ -10,8 +10,10 @@ import NavigationBar from "./components/NavigationBar.tsx";
 import RegisterPage from "./pages/registerPage/RegisterPage.tsx";
 import {useAuth} from "./common/AuthProvider.jsx";
 import RequireAuth from "./common/RequireAuth.tsx";
+import InventoryPage from "./pages/InventoryPage/InventoryPage.tsx";
 
 function App() {
+    //TODO LOADING WITH TOKEN READING
     const [player, setPlayer] = useState<Player>(null)
     let auth = useAuth()
     return (
@@ -33,6 +35,11 @@ function App() {
                 <Route path="/action" element={
                     <RequireAuth>
                         <ActionPage/>
+                    </RequireAuth>
+                }/>
+                <Route path="/inventory" element={
+                    <RequireAuth>
+                        <InventoryPage/>
                     </RequireAuth>
                 }/>
                 <Route path="/register" element={<RegisterPage/>}/>

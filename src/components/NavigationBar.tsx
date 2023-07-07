@@ -2,15 +2,17 @@ import React from 'react'
 import {PersonCircle, BoxSeam, Bank, BoxArrowRight, List} from 'react-bootstrap-icons'
 import './navigationBar.css'
 import {Button, Dropdown, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
 
 const NavigationBar = () => {
+    const navigate = useNavigate()
     return (
         <div>
             <div className='navigationbar__container whiteBox d-none d-md-inline-flex'>
-                <div className='navigationbar__icon_container'>
+                <div className='navigationbar__icon_container' onClick={() => navigate("/action")}>
                     <PersonCircle className='navigationbar__icon' size={25}/>
                 </div>
-                <div className='navigationbar__icon_container'>
+                <div className='navigationbar__icon_container' onClick={() => navigate("/inventory")}>
                     <BoxSeam className='navigationbar__icon' size={25}/>
                 </div>
                 <div className='navigationbar__icon_container'>
