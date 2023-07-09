@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 import {useAuth} from '../../common/AuthProvider'
-import {Link, useNavigate} from 'react-router-dom'
+import {Link, Navigate, useNavigate} from 'react-router-dom'
 import './loginpage.css'
 import {Button, Spinner} from "react-bootstrap";
 import {fetchPlayerFromAPI, login} from "./api-login.ts";
 import jwtDecode from "jwt-decode";
 
-const LoginPage = ({setPlayer}) => {
+const LoginPage = ({loadPlayer}) => {
     const navigate = useNavigate()
     const auth = useAuth()
     const [username, setUsername] = useState<string>('admin');
@@ -31,29 +31,16 @@ const LoginPage = ({setPlayer}) => {
         login(username, password)
             .then(res => {
                 localStorage.setItem("AUTH_TOKEN", res.data);
-                fetchPlayer(res.data)
+                
+                const {id} = jwtDecode(res.data)
+                loadPlayer(id)
             }, rej => {
-                console.log(rej)
                 setErrorText(rej.response.data)
                 setLoading(false)
             })
     };
     
-    const fetchPlayer = (token) => {
-        const {id} = jwtDecode<DecodedToken>(token)
-        
-        fetchPlayerFromAPI(id)
-            .then(res => {
-                console.log(res)
-                const p:Player = res.data
-                console.log("Player", p)
-                setPlayer(p)
-                auth.setIdHandler(p.playerId)
-                navigate("/action")
-            }, rej => {
-                setErrorText("Player found. Unknown error occurred. ")
-            })
-    }
+    if(auth.userId) return <Navigate to="/action" />
 
     return (
         <div className="loginPage__container">

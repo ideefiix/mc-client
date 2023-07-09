@@ -3,11 +3,15 @@
 
 const axiosClient = axios.create({
     baseURL: import.meta.env.VITE_API_BASE_URL ,
-    timeout: 2000,
-    headers: {'Authorization': `Bearer ${localStorage.getItem('AUTH_TOKEN')}`}
+    timeout: 2000
 })
 
-//MAYBE DO A INTERCETPOR THAT READS TOKEN IN REQUEST?
+axiosClient.interceptors.request.use(function (config) {
+    const token = `Bearer ${localStorage.getItem('AUTH_TOKEN')}`;
+    config.headers.Authorization = token;
+
+    return config;
+});
 
 axiosClient.interceptors.response.use(function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger

@@ -4,7 +4,7 @@ import './navigationBar.css'
 import {Button, Dropdown, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 
-const NavigationBar = () => {
+const NavigationBar = ({logout}) => {
     const navigate = useNavigate()
     return (
         <div>
@@ -19,7 +19,7 @@ const NavigationBar = () => {
                     <Bank className='navigationbar__icon' size={25}/>
                 </div>
                 <div className='navigationbar_verticalLine'></div>
-                <div className='navigationbar__icon_container'>
+                <div className='navigationbar__icon_container' onClick={() => logout()}>
                     <BoxArrowRight className='navigationbar__icon' size={25}/>
                 </div>
             </div>
